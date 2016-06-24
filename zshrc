@@ -84,5 +84,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# docker-machine starts daemon (TODO: to be deleted after new version of docker)
-eval $(docker-machine env default)
+
+# Custome Aliases
