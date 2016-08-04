@@ -50,7 +50,7 @@ ZSH_THEME="nebirhos"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx docker autojump)
+plugins=(git osx docker autojump go)
 
 # User configuration
 
@@ -88,3 +88,7 @@ source $ZSH/oh-my-zsh.sh
 alias c=clear
 
 # Custome Aliases
+
+
+# Paths
+export export GOPATH=$HOME/Projects/go
