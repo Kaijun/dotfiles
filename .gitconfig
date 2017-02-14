@@ -2,7 +2,7 @@
 	name = Kaijun Chen
 	email = Demonbane.cn@gmail.com
 [core]
-	excludesfile = /Users/Kaijun/.gitignore_global
+	excludesfile = /Users/kaijun/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -12,3 +12,5 @@
 [alias]
 	yo = "!f() { git add -A && git commit -m \"$@\" && git push; }; f" 
 	lg = log --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
+[commit]
+	template = /Users/kaijun/.stCommitMsg

@@ -91,4 +91,30 @@ alias c=clear
 
 
 # Paths
-export export GOPATH=$HOME/Projects/go
+export GOPATH=$HOME/Projects/go
+PATH=$PATH:$GOPATH/bin
+
+# GVM
+source /Users/kaijun/.gvm/scripts/gvm
+
+# KIRK 
+autoload -U compinit && compinit
+autoload -U bashcompinit && bashcompinit
+_kirk_bash_autocomplete() {
+  IFS=$'\n' COMPREPLY=($(eval "${COMP_WORDS[@]:0:$COMP_CWORD} --generate-bash-completion --generate-bash-completion-index '${COMP_CWORD}' --generate-bash-completion-cword '${COMP_WORDS[$COMP_CWORD]}'"))
+  return 0
+}
+complete -F _kirk_bash_autocomplete kirk
+
+
+qenv () {
+	case "$1" in
+		(prod) export QCOSAPPHOST=https://app-api.qiniu.com
+			export QCOSINDEXHOST=https://index.qiniu.com ;;
+		(cs) export QCOSAPPHOST=http://app-api.cs.qiniu.io
+			export QCOSINDEXHOST=https://index-dev.qiniu.io ;;
+		(local) export QCOSAPPHOST=http://192.168.99.100:3214
+			export QCOSINDEXHOST=http://192.168.99.100:4999 ;;
+		(*) echo $"Usage: $0 {prod|cs|local}" ;;
+	esac
+}
